@@ -1,0 +1,332 @@
+[
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_portefeuille",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_scoreCredit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_limiteExposition",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_collateral",
+				"type": "uint256"
+			}
+		],
+		"name": "ajouterContrepartie",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contrepartie",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "_autre",
+				"type": "address"
+			},
+			{
+				"internalType": "int256",
+				"name": "_position",
+				"type": "int256"
+			}
+		],
+		"name": "ajouterExposition",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "limiteExposition",
+				"type": "uint256"
+			}
+		],
+		"name": "ContrepartieAjoutee",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			}
+		],
+		"name": "ContrepartieDesactivee",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "nouvelleLimite",
+				"type": "uint256"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "nouveauScoreCredit",
+				"type": "uint256"
+			}
+		],
+		"name": "ContrepartieMiseAJour",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contrepartie",
+				"type": "address"
+			}
+		],
+		"name": "desactiverContrepartie",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "address",
+				"name": "autre",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "position",
+				"type": "int256"
+			}
+		],
+		"name": "ExpositionAjoutee",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "ExpositionSupprimee",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "int256",
+				"name": "expositionNette",
+				"type": "int256"
+			}
+		],
+		"name": "LimiteDepassee",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contrepartie",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_nouvelleLimite",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "_nouveauScoreCredit",
+				"type": "uint256"
+			}
+		],
+		"name": "mettreAJourContrepartie",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contrepartie",
+				"type": "address"
+			}
+		],
+		"name": "mettreAJourPositions",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contrepartie",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "index",
+				"type": "uint256"
+			}
+		],
+		"name": "supprimerExposition",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "_contrepartie",
+				"type": "address"
+			}
+		],
+		"name": "calculerExpositionNette",
+		"outputs": [
+			{
+				"internalType": "int256",
+				"name": "",
+				"type": "int256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"name": "contreparties",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "portefeuille",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "scoreCredit",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "limiteExposition",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "expositionCourante",
+				"type": "uint256"
+			},
+			{
+				"internalType": "uint256",
+				"name": "collateral",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bool",
+				"name": "estActif",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"name": "expositions",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "contrepartie",
+				"type": "address"
+			},
+			{
+				"internalType": "int256",
+				"name": "position",
+				"type": "int256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
