@@ -23,6 +23,4 @@ Ce projet implémente un système basé sur la blockchain pour gérer les risque
 1. Déployez le smart contract via Remix.
 2. Configurez Streamlit pour consommer le contrat via Web3.py.
 
-## Auteur
-Projet réalisé dans le cadre du Master DSEF, encadré par Mohammed AHNOUCH.
 
